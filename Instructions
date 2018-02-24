@@ -1,0 +1,16 @@
+Below is some further information:
+
+    1. There are two clients: users and trainers.
+    2. Each of these has the ability to log into the website through authentication.
+    3. Once signed in, they can see in the front page and the button ‘chat' showing up.
+    4. Clicking on chat you see all the messages in which the logged client is involved.
+    5. Then, you can click over ‘New chat’ and you are given a form to send a new message.
+    6. In the form you have to select the receiver (either a user or a trainer).
+    7. Editing and deleting messages isn’t allowed.
+    8. You can create an admin user if you want to make these operations.
+    9. Upload the project to Heroku
+
+
+You can have as many columns and tables in the database as you want and you can have more features.
+
+Feel free to lay out the front page as you prefer. 
