@@ -1,5 +1,9 @@
-<div class="text-center container-fluid jumbotron">
-	<h1 class="text-primary"> Welcome to the Chat-App </h1>
-	<p> To start chatting you must press the chat button below! </p>
-	<p><%= link_to "Chat", chat_path, class: "btn btn-lg btn-success" %></p>
-</div>
+<h3>New Chat</h3>
+<p>Select a user:</p>
+    <% @users.each do |user| %>
+      <% if user != current_user %>
+        <%= user.name %>
+        <%= link_to "Send Message", chats_path(sender_id: current_user.id, recipient_id: user.id), method: 'post' %>
+      <% end %>
+      <br>
+    <% end %>

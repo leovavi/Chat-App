@@ -9,7 +9,7 @@
 					<%= link_to chat_messages_path(chat) do %>
 						<div class="row conversation">
 							<div class="col-md-4">
-								<%= chat.messages.last.message_time unless chat.messages.empy? %>
+								<%= chat.messages.last.message_time unless chat.messages.empty? %>
 							</div>
 							<div class="col-md-6">
 								<%= chat.messages.last.content unless chat.messages.empty? %>
