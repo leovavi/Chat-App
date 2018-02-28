@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-8 col-md-offset-2">
 		<% role = current_user.admin ? "Admin" : current_user.role %>
-		<p> Hi there, <strong><%= current_user.name %>(<%= role %>)</strong>, continue chatting!</p>
+		<p> Hi there, <strong><%= current_user.name %> (<%= role %>)</strong>, continue chatting!</p>
 	</div>
 	<div class="col-md-8 col-md-offset-2">
 		<div class="panel panel-default">
@@ -22,6 +22,7 @@
 								<%= chat.messages.last.content unless chat.messages.empty? %>
 							</div>
 						</div>
+						<br>
 					<% end %>
 				<% end %>
 			</div>
@@ -29,12 +30,12 @@
 
 		<% if(current_user.admin) %>
 			<div class="panel panel-default">
-				<div class="panel-heading"><strong>All Chats</strong></div>
+				<div class="panel-heading"><strong>All Chats</strong></div>	
 				<div class="panel-body">
-					<% @chats_all.each do |chat| %>
+					<% @allChats.each do |chat| %>
 						<% other = chat.sender == current_user ? chat.recipient : chat.sender %>
 
-						<% link_to chat_messages_path(chat) do %>
+						<%= link_to chat_messages_path(chat) do %>
 							<div class="row conversation">
 								<div class="col-md-2">
 									<%= other.name %>

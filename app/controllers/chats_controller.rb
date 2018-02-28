@@ -2,8 +2,8 @@ class ChatsController < ApplicationController
 	before_action :authenticate_user!
 
 	def index
+		@allChats = Chat.all
 		@chats = Chat.involving(current_user)
-		@chats_all = Chat.all
 	end
 
 	def create

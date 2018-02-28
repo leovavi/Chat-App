@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
 	before_action :set_chat
 
 	def index
-		if current_user == @chat.sender || current_user == @chat.recipient || current_user.role == 'admin'
+		if current_user == @chat.sender || current_user == @chat.recipient || current_user.admin
 			@other = current_user == @chat.sender ? @chat.recipient : @chat.sender
 			@msgs = @chat.messages.order("created_at DESC")
 		else
