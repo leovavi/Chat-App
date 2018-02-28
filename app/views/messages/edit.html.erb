@@ -1,0 +1,17 @@
+<div class="panel">
+	<div class="panel-body">
+		<div class="row-space-2">
+			<%= bootstrap_form_for @msg, url: chat_message_path(@chat, @msg), method: :put do |f| %>
+				<div class="form-group">
+					<%= f.text_area :content, id:"new_message", placeholder: "Add a personal message", class: "form-control" %>
+				</div>
+
+				<%= f.hidden_field :user_id, value: current_user.id %>
+
+				<div class="actions">
+					<%= f.submit "Update Message", class: "btn btn-primary" %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
