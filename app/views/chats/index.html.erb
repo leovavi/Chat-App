@@ -1,11 +1,11 @@
 <div class="row">
 	<div class="col-md-8 col-md-offset-2">
 		<% role = current_user.admin ? "Admin" : current_user.role %>
-		<p> Hi there, <strong><%= current_user.name %> (<%= role %>)</strong>, continue chatting!</p>
-		<p><%= link_to "New Chat!", users_path, class: "btn btn-lg btn-success" %>
+		<p> Hi there, <strong><%= current_user.name %> (<%= role %>)</strong>, continue chatting! <%= link_to "New Chat!", users_path, class: "btn btn-lg btn-success pull-right" %></p>
+		<br>
 	</div>
 	<div class="col-md-8 col-md-offset-2">
-		<div class="panel panel-default">
+		<div class="panel panel-primary">
 			<div class="panel-heading"><strong>Your Chats</strong></div>
 			<div class="panel-body">
 				<% @chats.each do |chat| %>
@@ -30,7 +30,7 @@
 		</div>
 
 		<% if(current_user.admin) %>
-			<div class="panel panel-default">
+			<div class="panel panel-info">
 				<div class="panel-heading"><strong>All Chats</strong></div>	
 				<div class="panel-body">
 					<% @allChats.each do |chat| %>
@@ -49,6 +49,7 @@
 								</div>
 							</div>
 						<% end %>
+						<br>
 					<% end %>
 				</div>
 			</div>

@@ -6,7 +6,7 @@
 			<span class="pull-right"><%= msg.message_time %></span>
 			<br>
 			<div class="row-space-2">
-				<%= sanitize msg.content %>
+				<%= simple_format(msg.content, html_options = {}, options = {}) %>
 			</div>
 			<div class="pull-right">
 				<% if(current_user.admin) %>
