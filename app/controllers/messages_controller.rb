@@ -35,6 +35,7 @@ class MessagesController < ApplicationController
 	end
 
 	def destroy
+		@msg = @chat.messages.find(params[:id])
 		@msg.destroy
 		redirect_to chat_messages_path 
 	end
